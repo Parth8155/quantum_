@@ -1,0 +1,96 @@
+/* Dynamic grid styles for quantum circuit builder */
+.quantum-circuit-grid {
+    display: grid;
+    margin-bottom: 0.5rem;
+}
+
+.quantum-qubit-row {
+    display: grid;
+    position: relative;
+}
+
+.quantum-timeline-cell {
+    height: 2rem;
+    font-size: 0.75rem;
+    text-align: center;
+    color: hsl(var(--muted-foreground));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-tech);
+}
+
+.quantum-qubit-label {
+    height: 3rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: hsl(var(--primary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 0.375rem;
+    font-family: var(--font-orbitron);
+}
+
+.quantum-gate-cell {
+    height: 3rem;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.quantum-gate-cell:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.5);
+}
+
+.quantum-gate-cell.has-gate {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2));
+    border-color: rgba(59, 130, 246, 0.5);
+    cursor: grab;
+}
+
+.quantum-gate-cell.has-gate:active {
+    cursor: grabbing;
+}
+
+.quantum-wire {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg,
+            rgba(59, 130, 246, 0.6),
+            rgba(147, 51, 234, 0.6),
+            rgba(59, 130, 246, 0.6));
+    z-index: 1;
+}
+
+.quantum-bloch-container {
+    width: 100%;
+    height: 400px;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg,
+            rgba(15, 23, 42, 0.8),
+            rgba(30, 41, 59, 0.8));
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .quantum-timeline-cell {
+        font-size: 0.625rem;
+    }
+
+    .quantum-qubit-label {
+        font-size: 0.75rem;
+    }
+}
